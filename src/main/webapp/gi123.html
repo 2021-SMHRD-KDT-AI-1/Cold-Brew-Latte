@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grunt &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    
+    
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    
+
+    <link rel="stylesheet" href="css/style.css">
+<!--img style-->
+    <style>
+      .size1{
+        width: 15px;
+        height: 15px;
+        border-radius: 45px;
+      }
+   
+      body {
+          font-size: 18px;
+          background: white
+      }
+
+      @font-face {
+          font-family: 'GmarketSansMedium';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      ul {
+          list-style: none;
+      }
+
+      .quiz-wrap {
+          max-width: 500px;
+          background: white;
+          margin: 10px auto;
+          font-family: 'GmarketSansMedium';
+          padding: 0px;
+      }
+
+      .info {
+          padding: 10px;
+          background: #fff;
+          margin-bottom: 20px;
+      }
+
+      .info ul {
+          border: 0px solid #000;
+      }
+
+      .info li {
+          border-bottom: 0px solid #000;
+          padding: 12px;
+          font-size: 20px;
+          color: gray;
+          text-align: center;
+
+      }
+
+      .info li:last-child {
+          border-bottom: 0;
+      }
+
+      .quiz {
+          padding: 10px;
+          border: 1px solid gray;
+          margin-top: 20px;
+      }
+
+      .quiz h2 {
+          font-size: 20px;
+          margin-top: 56px;
+          margin-bottom: 20px;
+          background: white;
+          text-align: center;
+      }
+      .quiz h2:first-child {
+          margin-top: 0;
+      }
+
+      .quiz .question {
+          font-size: 12px;
+          line-height: 1.4;
+          padding-bottom: 20px;
+          position: relative;
+          padding-left: 10px;
+      }
+      
+      .quiz .question::before {
+          content: '';
+          position: absolute; left: 0; top: 5px;
+          width: 5px; height: 5px; 
+          border-radius: 50%;
+          background: #000;
+          
+      }
+
+      .quiz .select {
+          list-style: none;
+      }
+
+      .quiz .select li {
+          font-size: 10px;
+          padding-bottom: 10px;
+      }
+
+      label {
+          display: -webkit-box;
+          display: flex;
+          cursor: pointer;
+          font-weight: 50;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 0.375em;
+      }
+
+      label input {
+          position: absolute;
+          left: -9999px;
+      }
+
+      label input:checked+span {
+          background-color: #d6d6e5;
+      }
+      
+      label input:checked+span:before {
+          box-shadow: inset 0 0 0 0.4375em #00005c;
+      }
+
+      label span {
+          display: -webkit-box;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          padding: 0.375em 0.75em 0.375em 0.375em;
+          border-radius: 99em;
+          transition: 0.25s ease;
+          font-size: 12px;
+          line-height: 1;
+      }
+
+      label span:hover {
+          background-color: #d6d6e5;
+      }
+
+      label span:before {
+          display: -webkit-box;
+          display: flex;
+          flex-shrink: 0;
+          content: "";
+          background-color: #fff;
+          width: 1.5em;
+          height: 1.5em;
+          border-radius: 50%;
+          margin-right: 0.375em;
+          -webkit-transition: 0.25s ease;
+          transition: 0.25s ease;
+          box-shadow: inset 0 0 0 0.125em #00005c;
+      }
+
+      .confirm {
+          margin: 20px 10px;
+          text-align: center;
+      }
+
+      .confirm .confirm-btn {
+          background-color: #00005c;
+          border-radius: 50px;
+          padding: 20px;
+          color: #fff;
+          font-size: 20px;
+          cursor: pointer;
+          margin-bottom: 20px;
+      }
+      .confirm-deex {
+          display: none;
+      }
+      .confirm .confirm-desc {
+          padding: 20px;
+          padding: 20px;
+          border: 3px solid #00005c;
+      }
+      .confirm .confirm-ex {
+          text-align: left;
+          padding-top: 10px;
+          position: relative;
+          color: red;
+          padding-left: 10px;
+      }
+      .confirm .confirm-ex::before {
+          content: '';
+          width: 5px; height: 5px;
+          background: red;
+          position: absolute; left: 0; top: 15px;
+      }
+      .confirm .confirm-correct {
+          text-align: left;
+          padding-bottom: 10px;
+          position: relative;
+          color: red;
+          padding-left: 10px;
+      }
+      .confirm .confirm-correct::before {
+          content: '';
+          width: 5px; height: 5px;
+          background: red;
+          position: absolute; left: 0; top: 5px;
+      }
+      .submit {
+          text-align: center;
+          background-color: #ce555f;
+          border-radius: 50px;
+          padding: 10px;
+          color: #fff;
+          font-size: 20px;
+          cursor: pointer;
+          margin-top: 20px;
+      }
+      .results {
+          margin-top: 20px;
+          padding: 20px;
+          border: 3px solid #ce555f;
+          display: none;
+      }
+      .arrow {overflow: hidden; position: relative;}
+      .arrow a {
+          border: 2px solid #ce555f;
+
+          border-radius: 50px;
+          padding: 5px 10px;
+          color: gray;
+          font-size: 10px;
+          text-decoration: none;
+      }
+      .arrow .prev {
+
+        float: left;
+      }
+      .arrow .next {
+        float: right;
+      }
+      .arrow .count {
+          position: absolute; left: 50%; top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 8px;
+      }
+  </style>
+      
+
+
+    <script>
+
+      var userPick = document.querySelectorAll(".userPick") // 유저가 선택한 번호
+      var omrPick = document.querySelectorAll(".omrPick") // omr
+
+      for(var i = 0; i <omrPick.length;i++){
+        omrPick[i].addEventListener("click",changepick());
+      }
+    
+      function changepick(){
+        let hung = document.getElementById('img1');
+        hung.style.backgroundColor = 'block';
+      }
+
+      state = 0;
+      function changeImage1(){
+        // if(state==0){
+        //   state=1;
+        document.getElementById('img1').src="images/1-1.png";
+          // image1.style.backgroundColor = 'black';
+
+        // }else {
+        //   state = 0;
+        //   document.getElementById('img1').src="images/1.png";
+        // }
+      }
+      function changeImage2(){
+        if(state==0){
+          state=1;
+          document.getElementById('img2').src="images/2-2.png";
+        }else {
+          state = 0;
+          document.getElementById('img2').src="images/2.png";
+
+          document.getElementsByClassName
+        }
+      }
+      function changeImage3(){
+        if(state==0){
+          state=1;
+          document.getElementById('img3').src="images/3-3.png";
+        }else {
+          state = 0;
+          document.getElementById('img3').src="images/3.png";
+        }
+      }
+      function changeImage4(){
+        if(state==0){
+          state=1;
+          document.getElementById('img4').src="images/4-4.png";
+        }else {
+          state = 0;
+          document.getElementById('img4').src="images/4.png";
+        }
+      }
+
+      function answerCheck(){
+            $(document).on('click', function(e){
+              size1.changeImage1()
+            });
+        }
+        
+    </script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+  </head>
+
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <!--OMR 카드 칠해지는 기능-->
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    <div class="site-navbar-wrap">
+      <div class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-6 col-md-4">
+              <h1 class="my-0 site-logo"><a href="index.html">Cold Brew Latte<span class="text-primary">.</span> </a></h1>
+            </div>
+            <div class="col-6 col-md-8">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-block ml-md-0 mr-auto py-3">
+                    <a href="#" class="site-menu-toggle js-menu-toggle text-black">
+                      <span class="icon-menu h3"></span> <span class="menu-text">Menu</span>
+                   </a>
+                  </div>
+                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-none">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="datechoice.html" class="nav-link">기출문제풀이</a></li>
+                    <li><a href="yesangstart.html" class="nav-link">예상기출문제</a></li>
+                    <li><a href="keywordchoice.html" class="nav-link">키워드 학습</a></li>
+                    <li><a href="mypage.html" class="nav-link">My Page</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- END .site-navbar-wrap -->
+    
+    <div class="site-section" id="portfolio-section">
+      <div class="container">
+        <div class="row mb-5 ">
+          <div class="col-md-7 section-title text-center mx-auto">
+            <h2 class="title text-primary mb-3">정보처리기사</h2>
+            <span class="sub-title mb-2 d-block">2021년 4회차 예상 모의고사</span>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div style="background-image: url(images/papertexture.jpg);" class="col-lg-6-nam mb-4 mb-lg-0">
+            <table style="margin-left: auto;margin-right: auto;" border="" whidh="1000">
+              <tr>
+                <div class="quiz1"></div>
+                <div class="quiz2"></div>
+                <div class="quiz3"></div>
+                <div class="quiz4"></div>
+                <div class="quiz5"></div>
+                <div class="quiz1"></div>
+                <div class="quiz2"></div>
+                <div class="quiz3"></div>
+                <div class="quiz4"></div>
+                <div class="quiz5"></div>
+              </tr>
+              <tr>
+                <div class="arrow">
+                  <a href="#" class="prev">&lt; 이전 문제</a>
+                  <a href="#" class="next">다음 문제 &gt;</a>
+                  <div class="count"></div>
+                </div>
+              </tr>
+            </table>
+          </div>
+
+          <div class="col-lg-5-nam h-100 jm-sticky-top ml-auto">
+            <h3>OMR 카드</h3>
+            <p class="mb-4">2001년도부터 2021년 최신 기출문제까지 전체 문제보유</p>
+            <p class="mb-4"><a href="#" class="readmore">문제확인 필수!</a></p>
+
+              <!--OMR 양식 번호 5개씩 출력& hr 라인 그려주는거-->
+            <div class="testimonial bg-white h-100">
+              <hr>
+              <table border="0" align="center">
+                <tr class="omr_num">
+                  <td>&nbsp;&nbsp;1.&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img class="size1" id="img1" onclick="changeImage1()" src="images/1.png">&nbsp;&nbsp;</td> 
+                  <td>&nbsp;&nbsp;<img class="size1" id="img2" onclick="changeImage2()" src="images/2.png">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img class="size1" id="img3" onclick="changeImage3()" src="images/3.png">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img class="size1" id="img4" onclick="changeImage4()" src="images/4.png">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;&nbsp;2.&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/1.png" height="15">&nbsp;&nbsp;</td> 
+                  <td>&nbsp;&nbsp;<img src="images/2.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/3.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/4.png" height="15">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;&nbsp;3.&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/1.png" height="15">&nbsp;&nbsp;</td> 
+                  <td>&nbsp;&nbsp;<img src="images/2.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/3.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/4.png" height="15">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;&nbsp;4.&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/1.png" height="15">&nbsp;&nbsp;</td> 
+                  <td>&nbsp;&nbsp;<img src="images/2.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/3.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/4.png" height="15">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;&nbsp;5.&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/1.png" height="15">&nbsp;&nbsp;</td> 
+                  <td>&nbsp;&nbsp;<img src="images/2.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/3.png" height="15">&nbsp;&nbsp;</td>
+                  <td>&nbsp;&nbsp;<img src="images/4.png" height="15">&nbsp;&nbsp;</td>
+                </tr>
+              </table>
+              <hr>
+              <div class="d-flex align-items-center vcard">
+                <figure class="mb-0 mr-3">
+                  <p><a href="chaejum.html" target="_blank" class="btn btn-outline-primary btn-md">summit</a></p>
+                </figure>
+              </div>
+              <div class="vcard-text">
+                <span class="d-block">제출전 마지막으로 검토해보세요!</span>
+                <span class="position">Before Summit please check again!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        <div class="row">
+          <div class="col-lg-6-nam mb-4 mb-lg-0" style="background-image: url(images/papertexture.jpg);">
+             <div class="col-lg-12 mb-5 mb-lg-0">
+                <br>
+                   <figure class="mb-0 mr-3" align="right">
+                     <p><a href="" class="btn btn-outline-primary btn-md prev">이전</a></p>
+                   </figure>
+                <br>
+             </div>
+             <div class="col-lg-12 mb-5 mb-lg-0">
+                <br>
+                   <figure class="mb-0 mr-3">
+                     <p><a href="" class="btn btn-outline-primary btn-md next">다음</a></p>
+                   </figure>
+                <br>
+             </div>
+          </div>
+        </div>
+        -->
+        
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h3 class="footer-heading mb-4">About Us</h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 ml-auto">
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Navigation</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#home-section" class="smoothscroll">Home</a></li>
+                  <li><a href="#what-we-do-section" class="smoothscroll">What We Do</a></li>
+                  <li><a href="#about-section" class="smoothscroll">About Us</a></li>
+                  <li><a href="#team-section"  class="smoothscroll">Team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <form method="post" class="form-subscribe">
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Enter full name" aria-label="Enter Email" aria-describedby="button-addon2">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Enter email" aria-label="Enter Email" aria-describedby="button-addon2">
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary px-5" type="submit">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="mb-4">
+              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </div>
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/stickyfill.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ginext.js"></script>
+
+
+ </body>
+</html>
